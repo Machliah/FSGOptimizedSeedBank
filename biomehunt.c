@@ -1,4 +1,4 @@
-d#include "finders.h"
+#include "finders.h"
 #include <stdio.h>
 #include <stdlib.h>
 #define DEBUG 0
