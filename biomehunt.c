@@ -1313,18 +1313,20 @@ int main (int argc, char *argv[]) {
   uint64_t seed = atoll(argv[1]);
   int class = atoi(argv[2]);
   uint64_t biomestart = atoll(argv[3]);
-  lookup = (uint64_t*) malloc(sizeof(uint64_t)*13*2*4*10*10);
-  FILE *fpz = fopen("packed.bin","rb");
-  int reszzz = fread(lookup, 83200, 1, fpz);
-  fclose(fpz);
-
-  if (class % 2 == 0){
-    //IF even then crying route
-    cryingHunt(seed, biomestart);
-  } else {
-    //LAVA route
-    biomeHunt(seed, biomestart, (class >> 7) & 1, (class >> 6) & 1, (class >> 1) & 1);
-  }
-  free(lookup);
+  printf("%lld", lower48 | (biomestart << 48));
   return 0;
+  // lookup = (uint64_t*) malloc(sizeof(uint64_t)*13*2*4*10*10);
+  // FILE *fpz = fopen("packed.bin","rb");
+  // int reszzz = fread(lookup, 83200, 1, fpz);
+  // fclose(fpz);
+
+  // if (class % 2 == 0){
+  //   //IF even then crying route
+  //   cryingHunt(seed, biomestart);
+  // } else {
+  //   //LAVA route
+  //   biomeHunt(seed, biomestart, (class >> 7) & 1, (class >> 6) & 1, (class >> 1) & 1);
+  // }
+  // free(lookup);
+  // return 0;
 }
