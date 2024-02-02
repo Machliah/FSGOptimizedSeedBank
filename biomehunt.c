@@ -1,4 +1,4 @@
-#include "finders.h"
+d#include "finders.h"
 #include <stdio.h>
 #include <stdlib.h>
 #define DEBUG 0
@@ -1313,7 +1313,7 @@ int main (int argc, char *argv[]) {
   uint64_t seed = atoll(argv[1]);
   int class = atoi(argv[2]);
   uint64_t biomestart = atoll(argv[3]);
-  printf("%lld", lower48 | (biomestart << 48));
+  printf("%lld", seed | (biomestart << 48));
   return 0;
   // lookup = (uint64_t*) malloc(sizeof(uint64_t)*13*2*4*10*10);
   // FILE *fpz = fopen("packed.bin","rb");
